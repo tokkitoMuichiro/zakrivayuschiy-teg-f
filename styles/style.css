@@ -363,7 +363,7 @@
 }
 
 .fourth_sprint {
-  filter: blur(2px);
+  filter: contrast(1.1) sepia(1);
 }
 
 @media (width <= 375px) {
