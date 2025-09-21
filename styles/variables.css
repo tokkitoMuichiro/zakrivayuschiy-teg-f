@@ -1,1 +1,18 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --font-Inter: "Inter-Variable";
+  --font-PressStart2P: "Press Start 2P";
+  --card-header-fontWeight: 715;
+  --card-paragraph-fontWeight: 410;
+  --page-background-gradient: repeating-linear-gradient(
+      #d3d3d3 0px 2px,
+      transparent 2px 4px
+    ),
+    repeating-linear-gradient(to right, #d3d3d3 0px 2px, transparent 2px 4px),
+    linear-gradient(180deg, #e7e7e7 0.01%, #1a1a1a 100%);
+  --block-width: clamp(23.438rem, 16.285rem + 30.52vw, 43.75rem);
+  --heart-contur-color: black;
+  --heart-main-color: #ff0000;
+  --text-hover-color: #fff;
+  --button-hover-color: #000;
+}
