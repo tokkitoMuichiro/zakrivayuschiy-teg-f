@@ -13,9 +13,9 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-family: var(--font-Inter), sans-serif;
-  font-variation-settings: "wght" var(--card-paragraph-fontWeight),
-    "wght" var(--card-title-fontWeight);
+  font-family: var(--font-main), sans-serif;
+  font-variation-settings: "wght" var(--card-paragraph-font-weight),
+    "wght" var(--card-header-font-weight);
   background-image: var(--page-background-gradient);
   background-size: cover;
   background-attachment: fixed;
@@ -34,13 +34,13 @@
   width: var(--block-width);
   text-align: center;
   border: 2px solid #000;
-  height: clamp(20.438rem, 19.535rem + 3.85vw, 23rem);
+  min-height: clamp(20.438rem, 19.535rem + 3.85vw, 23rem);
   background-color: #fff;
   padding: 0px clamp(1rem, -1.344rem + 10vw, 7.656rem);
 }
 
 .header-title {
-  font-family: var(--font-PressStart2P), fantasy;
+  font-family: var(--font-accent), fantasy;
   font-size: clamp(3.063rem, 2.71rem + 1.5vw, 4.063rem);
   font-weight: 400;
   text-transform: uppercase;
@@ -48,7 +48,7 @@
 }
 
 .header-subtitle {
-  font-family: var(--font-PressStart2P), fantasy;
+  font-family: var(--font-accent), fantasy;
   font-size: clamp(0.875rem, 0.677rem + 0.85vw, 1.438rem);
   font-weight: 400;
   text-transform: uppercase;
@@ -72,7 +72,7 @@
 .card-title {
   padding: 5px 10px;
   font-size: 18px;
-  font-variation-settings: "wght" var(--card-header-fontWeight);
+  font-variation-settings: "wght" var(--card-header-font-weight);
 }
 
 .card-img-block {
@@ -95,7 +95,7 @@
   top: 25px;
   text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
     1px 1px 0 #fff;
-  font-family: var(--font-PressStart2P), fantasy;
+  font-family: var(--font-accent), fantasy;
   font-size: 14px;
   font-weight: 400;
   text-transform: uppercase;
@@ -122,7 +122,7 @@
   font-size: 18px;
   font-style: normal;
   line-height: 21px;
-  font-variation-settings: "wght" var(--card-paragraph-fontWeight);
+  font-variation-settings: "wght" var(--card-paragraph-font-weight);
 }
 
 .card-buttons {
@@ -154,7 +154,7 @@
 }
 
 .button__text {
-  font-family: var(--font-PressStart2P), fantasy;
+  font-family: var(--font-accent), fantasy;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -174,6 +174,7 @@
   gap: 8px;
   padding: 13px 18px;
   width: clamp(19.125rem, 18.465rem + 2.82vw, 21rem);
+  background-color: #fff;
   transition: box-shadow 0.3s ease;
 }
 
@@ -220,6 +221,11 @@
   border: 2px solid #000;
   max-height: 38px;
   transition: box-shadow 0.3s ease;
+  background-color: #fff;
+}
+
+.submit-button .button__text {
+  text-transform: uppercase;
 }
 
 .dialog-info {
@@ -230,7 +236,7 @@
 }
 
 .dialog-info-text {
-  font-family: var(--font-PressStart2P), fantasy;
+  font-family: var(--font-accent), fantasy;
   font-size: 14px;
   font-weight: 400;
   line-height: 150%;
@@ -302,16 +308,12 @@
   animation-delay: 0.3s;
 }
 
-.submit-button:focus-visible,
-.card__like-button:focus-visible,
-.floppy-button:focus-visible {
+.button-interactive:focus-visible {
   outline: none;
   box-shadow: 2px 2px 0 0 #000;
 }
 
-.submit-button::before,
-.card__like-button::before,
-.floppy-button::before {
+.button-interactive::before {
   content: "";
   position: absolute;
   top: 0;
@@ -324,9 +326,7 @@
   transition: 0.5s ease-in-out;
 }
 
-.submit-button:hover::before,
-.card__like-button:hover::before,
-.floppy-button:hover::before {
+.button-interactive:hover::before {
   transform: scaleX(1);
 }
 
@@ -335,34 +335,34 @@
   box-shadow: 0 0 0 2px #000;
 }
 
-.zero_sprint {
+.filter-invert {
   filter: invert(20%);
 }
 
-.first_sprint_start {
+.filter-contrast {
   filter: contrast(50%);
 }
-.first_sprint_end {
+.filter-grayscale {
   filter: grayscale(80%);
 }
 
-.second_sprint_start {
+.filter-brightness {
   filter: brightness(40%);
 }
 
-.second_sprint_end {
+.filter-sepia {
   filter: sepia(0.9);
 }
 
-.third_sprint_start {
+.filter-hue-rotate {
   filter: hue-rotate(30deg);
 }
 
-.third_sprint_end {
+.filter-saturate {
   filter: saturate(200%);
 }
 
-.fourth_sprint {
+.filter-contrast-sepia {
   filter: contrast(1.1) sepia(1);
 }
 
